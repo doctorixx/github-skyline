@@ -1,3 +1,6 @@
+import datetime
+
+
 def generate_rect(a, b, c, d):
     return [a, b, c], [a, c, d]
 
@@ -26,3 +29,33 @@ def generate_stat(level, offset_x=0, offset_y=0, offset_z=0):
     h = [offset_x + 1, offset_y + 0, level + offset_z]
 
     return generate_parallepiped(a, b, c, d, e, f, g, h)
+
+
+def generate_pedestal():
+    return generate_parallepiped(
+        [3, -2, 0],
+        [3, 9, 0],
+        [-55, 9, 0],
+        [-55, -2, 0],
+        [2, -1, 3],
+        [2, 8, 3],
+        [-54, 8, 3],
+        [-54, -1, 3],
+    )
+
+
+def generate_contribution_array(github_data) -> list:
+    contribution_array = [[0] * 54 for _ in range(7)]
+
+    first_day = list(map(int, github_data[0]["date"].split("-")))
+    first_day_of_year = datetime.date(first_day[0], first_day[1], first_day[2])
+
+    offset = first_day_of_year.isoweekday()
+
+    for i, value in enumerate(github_data):
+        x = (i + offset) // 7
+        y = (i + offset) % 7
+
+        contribution_array[y][x] = value['count']
+
+    return contribution_array
