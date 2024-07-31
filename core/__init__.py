@@ -23,17 +23,36 @@ def process_github_stats(username, year, filename):
     for i, f in enumerate(polygons):
         cube.vectors[i] = f
 
+    cube.vectors *= 2.58
+
     letters = process_text_raw(username)
+    # letters = process_text_raw("a" * 28)
     letters.rotate([1, 0, 0], math.radians(-90))
     letters.rotate([0, 0, 1], math.radians(180))
     letters.rotate([1, 0, 0], math.radians(-20))
 
-    cube.vectors *= 2.58
-
-    move(letters, -20, 35, -5)
-    letters.vectors *= 0.65
+    letters.vectors *= 0.20
+    move(letters, -5, 21, 6)
     # scale(letters, 1, 0.75, 1)
-    to_export = mesh.Mesh(numpy.concatenate([cube.data, letters.data]))
+
+    year_obj = process_text_raw(year)
+    year_obj.rotate([1, 0, 0], math.radians(-90))
+    year_obj.rotate([0, 0, 1], math.radians(180))
+    year_obj.rotate([1, 0, 0], math.radians(-20))
+
+    year_obj.vectors *= 0.20
+    move(year_obj, -120, 21, 6)
+    # scale(letters, 1, 0.75, 1)
+
+    github_logo = mesh.Mesh.from_file(f'assets/github.stl')
+    scale(github_logo, 1, 1, 2)
+    github_logo.rotate([1, 0, 0], math.radians(-90))
+    github_logo.rotate([0, 0, 1], math.radians(180))
+    github_logo.rotate([1, 0, 0], math.radians(-20))
+    move(github_logo, -110, 30.5, 95)
+    github_logo.vectors *= 0.35
+
+    to_export = mesh.Mesh(numpy.concatenate([cube.data, letters.data, year_obj.data, github_logo.data]))
 
     to_export.save(filename)
 
