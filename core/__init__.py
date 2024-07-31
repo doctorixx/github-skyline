@@ -23,10 +23,24 @@ def process_github_stats(username, year, filename):
     for i, f in enumerate(polygons):
         cube.vectors[i] = f
 
-    cube.save(filename)
+    letters = process_text_raw(username)
+    letters.rotate([1, 0, 0], math.radians(-65))
+
+    cube.vectors *= 2.58
+
+    move(letters, -50 * 2.58 - 60, -10, -5.5)
+    letters.vectors *= 0.65
+    scale(letters, 1, 0.75, 1)
+    to_export = mesh.Mesh(numpy.concatenate([cube.data, letters.data]))
+
+    to_export.save(filename)
 
 
 def process_text(text, filename):
+    process_text_raw(text).save(filename)
+
+
+def process_text_raw(text):
     objs = []
     x_pos = 0
     for letter in text.upper():
@@ -39,4 +53,4 @@ def process_text(text, filename):
 
     combined = mesh.Mesh(numpy.concatenate([to_render.data for to_render in objs]))
 
-    combined.save(filename)
+    return combined

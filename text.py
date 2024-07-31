@@ -5,3 +5,4 @@ if __name__ == '__main__':
     filename = f"{text}.stl"
 
     process_text(text, filename)
+

@@ -69,6 +69,13 @@ def move(your_mesh, tx, ty, tz):
             your_mesh.vectors[i][j] = your_mesh.vectors[i][j] + numpy.array([tx, ty, tz])
 
 
+def scale(your_mesh, tx, ty, tz):
+    for i in range(0, len(your_mesh.vectors)):
+        for j in range(0, len(your_mesh.vectors[i])):
+            your_mesh.vectors[i][j] = your_mesh.vectors[i][j] * numpy.array([tx, ty, tz])
+
+
+
 def get_w(your_mesh, axis):
     arr = []
 
