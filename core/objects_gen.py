@@ -77,6 +77,9 @@ def generate_main_body(contribution_array):
     # Generation of stats
     for y, x_values in enumerate(contribution_array):
         for x, level in enumerate(x_values):
+            if level == 0:
+                # If level is 0, all polygons are unnecessary (The height of generated mesh is also 0)
+                continue
             polygons += generate_stat(math.sqrt(level) * 2.5, -x, y, 3)
 
     polygons += generate_pedestal()
