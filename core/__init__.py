@@ -24,13 +24,15 @@ def process_github_stats(username, year, filename):
         cube.vectors[i] = f
 
     letters = process_text_raw(username)
-    letters.rotate([1, 0, 0], math.radians(-65))
+    letters.rotate([1, 0, 0], math.radians(-90))
+    letters.rotate([0, 0, 1], math.radians(180))
+    letters.rotate([1, 0, 0], math.radians(-20))
 
     cube.vectors *= 2.58
 
-    move(letters, -50 * 2.58 - 60, -10, -5.5)
+    move(letters, -20, 35, -5)
     letters.vectors *= 0.65
-    scale(letters, 1, 0.75, 1)
+    # scale(letters, 1, 0.75, 1)
     to_export = mesh.Mesh(numpy.concatenate([cube.data, letters.data]))
 
     to_export.save(filename)
