@@ -4,7 +4,7 @@ Altervative of https://skyline.github.com/
 
 This program generate 3d graph of your contributions to GitHub platform
 ___
-![](images\render.png "Github skyline render")
+![](images/render.png "Github skyline render")
 ___
 
 ## Usage
@@ -48,5 +48,5 @@ if __name__ == '__main__':
 
 Check "*.stl" fies in project root
 
-![](images\stl_file.png "Stl file in explorer")
+![](images/stl_file.png "Stl file in explorer")
 
