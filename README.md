@@ -1,6 +1,6 @@
 # Github Skyline (Alternative)  ![](https://img.shields.io/badge/export-stl-blue)
 
-Altervative of https://skyline.github.com/
+Alternative of https://skyline.github.com/
 
 This program generate 3d graph of your contributions to GitHub platform
 ___
@@ -8,6 +8,32 @@ ___
 ___
 
 ## Usage
+
+- Go to the latest release and select your platform
+![](images/release_assets.png "Github skyline render")
+- Download your system archive
+- Unzip archive
+
+
+### Windows
+![](images/windows_open.png "Github skyline render")
+
+- Double-click on downloaded file
+
+![](images/windows_work_example.png "Github skyline render")
+
+### Linux and Mac
+
+- Run the download binary
+
+```shell
+./skyline-wizard.bin
+```
+
+![](images/linux_run_example.png "Github skyline render")
+
+
+## Python usage
 
 - Clone this repo
 
