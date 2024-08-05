@@ -50,7 +50,7 @@ def generate_username_letters(username):
 
 def generate_github_logo():
     logo_path = os.path.join(
-        os.path.dirname(__file__), os.pardir, "assets", f'github.stl'
+        os.path.dirname(os.path.dirname(__file__)), "assets", f'github.stl'
     )
 
     github_logo = mesh.Mesh.from_file(logo_path)
