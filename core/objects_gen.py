@@ -1,4 +1,5 @@
 import math
+import os
 
 import numpy as np
 from stl import mesh
@@ -48,7 +49,11 @@ def generate_username_letters(username):
 
 
 def generate_github_logo():
-    github_logo = mesh.Mesh.from_file(f'assets/github.stl')
+    logo_path = os.path.join(
+        os.path.dirname(__file__), os.pardir, "assets", f'github.stl'
+    )
+
+    github_logo = mesh.Mesh.from_file(logo_path)
     scale(github_logo, 1, 1, 2)
     github_logo.rotate([1, 0, 0], math.radians(-90))
     github_logo.rotate([0, 0, 1], math.radians(180))

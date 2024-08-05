@@ -1,3 +1,5 @@
+import os
+
 import numpy
 from stl import mesh
 
@@ -10,10 +12,18 @@ def process_text_raw(text):
     x_pos = 0
     for letter in text.upper():
         try:
-            obj = mesh.Mesh.from_file(f'assets/{letter}.stl')
-        except:
-            obj = mesh.Mesh.from_file("assets/question_mark.stl")
+            path = os.path.join(
+                os.path.dirname(__file__), os.pardir, f'assets", "{letter}.stl'
+            )
 
+            obj = mesh.Mesh.from_file(path)
+        except:
+            path = os.path.join(
+                os.path.dirname(__file__), os.pardir, "assets", "question_mark.stl"
+            )
+
+            obj = mesh.Mesh.from_file(path)
+        # print(path)
         modifier = FIXED_POSITION_MODIFIER.get(letter, FIXED_POSITION_MODIFIER['default'])
         modifier(obj)
 
