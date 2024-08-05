@@ -50,3 +50,5 @@ Check "*.stl" fies in project root
 
 ![](images/stl_file.png "Stl file in explorer")
 
+## Developments builds
+You can find developments build in GitHub Actions  
