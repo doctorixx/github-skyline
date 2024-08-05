@@ -1,4 +1,6 @@
 import math
+import os
+import sys
 
 import numpy as np
 from stl import mesh
@@ -9,6 +11,13 @@ from .objects_gen import generate_username_letters, generate_github_logo, genera
 from .text_gen import process_text_raw
 from .letters_modifiers import FIXED_OFFSETS, FIXED_POSITION_MODIFIER
 from .utils import *
+
+
+def get_current_executable_directory():
+    if getattr(sys, 'frozen', False):
+        return os.path.dirname(os.path.realpath(sys.executable))
+
+    return os.getcwd()
 
 
 def process_github_stats(username, year, filename):
@@ -23,7 +32,11 @@ def process_github_stats(username, year, filename):
     to_export = mesh.Mesh(numpy.concatenate([body.data, letters.data, year_obj.data, github_logo.data]))
     to_export.rotate([0, 0, 1], math.radians(180))
 
-    to_export.save(filename)
+    path = os.path.join(
+        get_current_executable_directory(), filename
+    )
+
+    to_export.save(path)
 
 
 def process_text(text, filename):
