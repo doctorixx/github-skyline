@@ -13,7 +13,7 @@ def process_text_raw(text):
     for letter in text.upper():
         try:
             path = os.path.join(
-                os.path.dirname(__file__), os.pardir, f'assets", "{letter}.stl'
+                os.path.dirname(__file__), os.pardir, "assets", f"{letter}.stl"
             )
 
             obj = mesh.Mesh.from_file(path)
