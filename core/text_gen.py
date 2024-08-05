@@ -13,13 +13,13 @@ def process_text_raw(text):
     for letter in text.upper():
         try:
             path = os.path.join(
-                os.path.dirname(__file__), os.pardir, "assets", f"{letter}.stl"
+                os.path.dirname(os.path.dirname(__file__)), "assets", f"{letter}.stl"
             )
 
             obj = mesh.Mesh.from_file(path)
         except:
             path = os.path.join(
-                os.path.dirname(__file__), os.pardir, "assets", "question_mark.stl"
+                os.path.dirname(os.path.dirname(__file__)), "assets", "question_mark.stl"
             )
 
             obj = mesh.Mesh.from_file(path)
