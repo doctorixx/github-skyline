@@ -17,7 +17,7 @@ parser.add_argument('-y', '--year', dest="year")
 
 def cli_mode(parsed):
     filename = parsed.filename
-    username = parsed.nickname
+    username = parsed.username
     year = parsed.year
 
     if filename is None:
