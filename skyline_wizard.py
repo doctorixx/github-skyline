@@ -1,4 +1,7 @@
 import argparse
+from art import tprint
+import colorama
+from colorama import Back, Fore
 
 from core import process_github_stats
 
@@ -24,17 +27,48 @@ def cli_mode(parsed):
 
 
 def ui_mode():
-    print("Welcome to github-skyline generator By doctorixx \n")
-    print("Enter github username")
+    colorama.init()
+
+    print(Fore.BLUE)
+    tprint("github-skyline")
+    print(Fore.RESET)
+
+    print(Fore.BLACK + Back.MAGENTA, end="")
+    print("Welcome to github-skyline generator By doctorixx", end="")
+    print(Fore.RESET + Back.RESET, "\n")
+
+    print(Fore.BLACK + Back.WHITE, end="")
+    print("Enter github username", end="")
+    print(Fore.RESET + Back.RESET)
     username = input("> ")
-    print("Enter year")
+    print()
+
+    print(Fore.BLACK + Back.WHITE, end="")
+    print("Enter year", end="")
+    print(Fore.RESET + Back.RESET)
     year = input("> ")
+    print()
+
     filename = f"{username}-{year}.stl"
+    print(Fore.YELLOW, end="")
     print("[/] Generation started")
+    print(Fore.RESET, end="")
     process_github_stats(username, year, filename)
+
+    print(Fore.GREEN, end="")
     print("[+] Generation completed")
-    print(f"[+] Saved to file {filename}")
+    print(Fore.RESET, end="")
+
+    print(Fore.GREEN, end="")
+    print(f"[+] Saved to file ", end="")
+    print(Fore.LIGHTGREEN_EX + Back.RESET, end="")
+    print(filename, end="")
+    print(Fore.RESET + Back.RESET)
+
+    print(Fore.CYAN, end="")
     print("Press enter to exit...")
+    print(Fore.RESET, end="")
+
     input()
 
 
