@@ -1,4 +1,6 @@
-# Github Skyline (Alternative)  ![](https://img.shields.io/badge/export-stl-blue)
+# Github Skyline (Alternative)  
+![](https://img.shields.io/badge/export-stl-blue)
+
 
 Alternative of https://skyline.github.com/
 
@@ -7,22 +9,38 @@ ___
 ![](images/render.png "Github skyline render")
 ___
 
+<!-- TOC -->
+* [Github Skyline (Alternative)](#github-skyline-alternative-)
+  * [Usage](#usage)
+    * [UI usage](#ui-usage)
+      * [Windows](#windows)
+      * [Linux and Mac](#linux-and-mac)
+    * [CLI usage](#cli-usage)
+      * [MacOS / Linux](#macos--linux)
+      * [Windows](#windows-1)
+  * [Python usage](#python-usage)
+  * [Compatibility](#compatibility)
+  * [Developments builds](#developments-builds)
+<!-- TOC -->
+
 ## Usage
 
 - Go to the latest release and select your platform
-![](images/release_assets.png "Github skyline render")
+  ![](images/release_assets.png "Github skyline render")
 - Download your system archive
 - Unzip archive
 
+### UI usage
 
-### Windows
+#### Windows
+
 ![](images/windows_open.png "Github skyline render")
 
 - Double-click on downloaded file
 
 ![](images/windows_work_example.png "Github skyline render")
 
-### Linux and Mac
+#### Linux and Mac
 
 - Run the download binary
 
@@ -32,6 +50,25 @@ ___
 
 ![](images/linux_run_example.png "Github skyline render")
 
+### CLI usage
+
+(Use same file)
+
+![img.png](images/cli_options.png)
+
+Example:
+
+#### MacOS / Linux
+
+```shell
+./skyline-wizard.bin -u doctorixx -y 2024
+```
+
+#### Windows
+
+```shell
+./skyline-wizard.exe -u doctorixx -y 2024
+```
 
 ## Python usage
 
@@ -76,5 +113,16 @@ Check "*.stl" fies in project root
 
 ![](images/stl_file.png "Stl file in explorer")
 
+## Compatibility
+
+(Checked binaries, With Python app works correctly on all platforms)
+
+| OS      | x64 | arm64 |
+|---------|:---:|:-----:|
+| MacOS   |  ❔  |   ❔   |
+| Linux   |  ✅  |   ❌   |
+| Windows |  ✅  |   ❔   |
+
 ## Developments builds
-You can find developments build in GitHub Actions  
+
+You can find developments build in GitHub Actions
