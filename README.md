@@ -51,8 +51,10 @@ ___
 ![](images/linux_run_example.png "Github skyline render")
 
 ### CLI usage
-
 (Use same file)
+> [!WARNING]  
+> The command line interface only works in developer builds because the antivirus considers it a virus
+
 
 ![img.png](images/cli_options.png)
 
