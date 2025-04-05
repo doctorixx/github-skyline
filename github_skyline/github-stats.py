@@ -1,4 +1,4 @@
-from core import process_github_stats
+from github_skyline.core import process_github_stats
 
 if __name__ == '__main__':
     username = "doctorixx"  # CHANGE TO YOUR USERNAME

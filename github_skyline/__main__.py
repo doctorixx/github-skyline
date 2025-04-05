@@ -3,7 +3,7 @@ from art import tprint
 import colorama
 from colorama import Back, Fore
 
-from core import process_github_stats
+from github_skyline.core import process_github_stats
 
 parser = argparse.ArgumentParser(
     prog='skyline_wizard',

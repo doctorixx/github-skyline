@@ -1,0 +1,2 @@
+include README.md
+recursive-include github_skyline/assets *.stl
