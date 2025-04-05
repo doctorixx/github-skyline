@@ -5,7 +5,9 @@
 Alternative of https://skyline.github.com/
 
 > [!WARNING]  
-> The official [CLI](https://github.com/github/gh-skyline) from github has been released. The current repository will no longer be developed
+> The official [CLI](https://github.com/github/gh-skyline) from github has been released, but the design of the models from the site and from the cli is different.
+> 
+> My program follows the original design.
 
 
 This program generate 3d graph of your contributions to GitHub platform
