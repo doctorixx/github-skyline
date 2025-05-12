@@ -33,7 +33,7 @@ ___
 ## Usage
 
 ```shell
-pip install github_skyline
+pip install github-skyline
 ```
 
 
