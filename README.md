@@ -18,6 +18,7 @@ ___
 <!-- TOC -->
 * [Github Skyline (Alternative)](#github-skyline-alternative-)
   * [Usage](#usage)
+  * [Usage Legacy](#usage-legacy)
     * [UI usage](#ui-usage)
       * [Windows](#windows)
       * [Linux and Mac](#linux-and-mac)
@@ -30,6 +31,25 @@ ___
 <!-- TOC -->
 
 ## Usage
+
+```shell
+pip install github_skyline
+```
+
+
+UI in cmd
+
+```shell
+python -m github_skyline
+```
+
+CLI
+```shell
+python -m github_skyline --help
+```
+
+
+## Usage Legacy
 
 - Go to the latest release and select your platform
   ![](images/release_assets.png "Github skyline render")
