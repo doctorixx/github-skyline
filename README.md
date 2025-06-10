@@ -1,156 +1,201 @@
-# Github Skyline (Alternative)  
-![](https://img.shields.io/badge/export-stl-blue)
+# GitHub Skyline (Alternative)
 
+![Export STL](https://img.shields.io/badge/export-stl-blue)
+[![Python](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-Alternative of https://skyline.github.com/
+**An alternative implementation of [GitHub Skyline](https://skyline.github.com/) that generates 3D models of your GitHub contribution history.**
 
-> [!WARNING]  
-> The official [CLI](https://github.com/github/gh-skyline) from github has been released, but the design of the models from the site and from the cli is different.
-> 
-> My program follows the original design.
+Transform your GitHub contributions into stunning 3D landscapes that you can 3D print, display, or share!
 
+![GitHub Skyline Render](images/render.png)
 
-This program generate 3d graph of your contributions to GitHub platform
-___
-![](images/render.png "Github skyline render")
-___
+---
 
-<!-- TOC -->
-* [Github Skyline (Alternative)](#github-skyline-alternative-)
-  * [Usage](#usage)
-  * [Usage Legacy](#usage-legacy)
-    * [UI usage](#ui-usage)
-      * [Windows](#windows)
-      * [Linux and Mac](#linux-and-mac)
-    * [CLI usage](#cli-usage)
-      * [MacOS / Linux](#macos--linux)
-      * [Windows](#windows-1)
-  * [Python usage](#python-usage)
-  * [Compatibility](#compatibility)
-  * [Developments builds](#developments-builds)
-<!-- TOC -->
+## ✨ Features
 
-## Usage
+- 🎯 **Faithful Design**: Follows the original GitHub Skyline design (unlike the official CLI)
+- 🖥️ **Multiple Interfaces**: GUI, CLI, and Python library support
+- 📦 **Cross-Platform**: Works on Windows, macOS, and Linux
+- 🎨 **STL Export**: Ready-to-print 3D models
+- 🚀 **Easy Installation**: Simple pip install or standalone binaries
 
-```shell
+## 🚀 Quick Start
+
+### Installation
+
+```bash
 pip install github-skyline
 ```
 
+### Generate Your Skyline
 
-UI in cmd
-
-```shell
+**GUI Mode:**
+```bash
 python -m github_skyline
 ```
 
-CLI
-```shell
+**CLI Mode:**
+```bash
 python -m github_skyline --help
+python -m github_skyline -u your-username -y 2024
 ```
 
+## 📖 Detailed Usage
 
-## Usage Legacy
+### Method 1: Python Package (Recommended)
 
-- Go to the latest release and select your platform
-  ![](images/release_assets.png "Github skyline render")
-- Download your system archive
-- Unzip archive
+1. **Install the package:**
+   ```bash
+   pip install github-skyline
+   ```
 
-### UI usage
+2. **Launch GUI:**
+   ```bash
+   python -m github_skyline
+   ```
 
-#### Windows
+3. **Or use CLI:**
+   ```bash
+   python -m github_skyline -u your-username -y 2024
+   ```
 
-![](images/windows_open.png "Github skyline render")
+### Method 2: Standalone Binaries
 
-- Double-click on downloaded file
+1. **Download:** Go to [Releases](https://github.com/doctorixx/github-skyline/releases) and download the appropriate binary for your system:
 
-![](images/windows_work_example.png "Github skyline render")
+   ![Release Assets](images/release_assets.png)
 
-#### Linux and Mac
+2. **Extract** the downloaded archive
 
-- Run the download binary
+3. **Run the application:**
 
-```shell
-./skyline-wizard.bin
+   **Windows:**
+   - Double-click `skyline-wizard.exe`
+   
+   ![Windows Example](images/windows_work_example.png)
+
+   **macOS/Linux:**
+   ```bash
+   ./skyline-wizard.bin
+   ```
+   
+   ![Linux Example](images/linux_run_example.png)
+
+### Method 3: From Source
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/doctorixx/github-skyline.git
+   cd github-skyline
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Edit configuration** in `github-stats.py`:
+   ```python
+   from core import process_github_stats
+   
+   if __name__ == '__main__':
+       username = "your-username"  # Replace with your GitHub username
+       year = "2024"              # Replace with desired year
+       filename = f"{username}-{year}.stl"
+       process_github_stats(username, year, filename)
+   ```
+
+4. **Run the script:**
+   ```bash
+   python github-stats.py
+   ```
+
+5. **Find your STL file** in the project root directory:
+   
+   ![STL File](images/stl_file.png)
+
+## 🔧 CLI Options
+
+![CLI Options](images/cli_options.png)
+
+### Available Commands
+
+| Option | Description | Example |
+|--------|-------------|---------|
+| `-u, --username` | GitHub username | `-u doctorixx` |
+| `-y, --year` | Year to generate | `-y 2024` |
+| `-o, --output` | Output filename | `-o my-skyline.stl` |
+| `-h, --help` | Show help message | `--help` |
+
+### Examples
+
+```bash
+# Generate skyline for user 'doctorixx' for 2024
+python -m github_skyline -u doctorixx -y 2024
+
+# Custom output filename
+python -m github_skyline -u doctorixx -y 2024 -o my-contributions.stl
 ```
 
-![](images/linux_run_example.png "Github skyline render")
+## 🖥️ Platform Compatibility
 
-### CLI usage
-(Use same file)
-> [!WARNING]  
-> The command line interface only works in developer builds because the antivirus considers it a virus
+| Platform | x64 | ARM64 | Status |
+|----------|:---:|:-----:|:------:|
+| Windows  | ✅  | ❔    | Tested |
+| Linux    | ✅  | ❌    | Tested |
+| macOS    | ❔  | ❔    | Untested |
 
+**Legend:**
+- ✅ Fully supported and tested
+- ❔ Should work but not extensively tested
+- ❌ Not supported
 
-![img.png](images/cli_options.png)
+> **Note:** Python package works correctly on all platforms. Compatibility table refers to standalone binaries.
 
-Example:
+## ⚠️ Important Notes
 
-#### MacOS / Linux
+> **Official CLI Differences:** While GitHub has released an [official CLI tool](https://github.com/github/gh-skyline), it uses a different design. This project maintains compatibility with the original GitHub Skyline website design.
 
-```shell
-./skyline-wizard.bin -u doctorixx -y 2024
+> **Antivirus Warning:** Some antivirus software may flag standalone binaries as suspicious. This is a false positive common with PyInstaller-generated executables. The Python package installation is recommended for security-conscious users.
+
+## 🛠️ Development
+
+### Development Builds
+
+Development builds are available through [GitHub Actions](https://github.com/doctorixx/github-skyline/actions).
+
+### Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+### Building from Source
+
+```bash
+# Install build dependencies
+pip install -r requirements-dev.txt
+
+# Build standalone executable
+pyinstaller --onefile github-stats.py
 ```
 
-#### Windows
+## 📝 License
 
-```shell
-./skyline-wizard.exe -u doctorixx -y 2024
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Python usage
+## 🤝 Support
 
-- Clone this repo
+- 🐛 **Bug Reports:** [Open an issue](https://github.com/doctorixx/github-skyline/issues)
+- 💡 **Feature Requests:** [Start a discussion](https://github.com/doctorixx/github-skyline/discussions)
+- 📧 **Questions:** Check existing issues or start a new discussion
 
-```shell
-git clone https://github.com/doctorixx/github-skyline.git
-cd github-skyline
-```
+## 🎉 Showcase
 
-- Install all python requirements
+Share your GitHub Skylines! Tag us or open a discussion to show off your 3D printed contributions.
 
-```shell
-pip install -r requirement.txt
-```
+---
 
-- Change variables (in **github-stats.py**)
-
-```python
-from core import process_github_stats
-
-if __name__ == '__main__':
-    username = "doctorixx"  # CHANGE TO YOUR USERNAME
-    year = "2023"  # CHANGE TO YOUR YEAR
-    filename = f"{username}-{year}.stl"  # <- Generated filename
-
-    process_github_stats(username, year, filename)
-```
-
-- run **github-stats.py**
-
-> Linux/MacOS:
-> ```shell
-> python3 github-stats.py
-> ```
-> Windows:
-> ```shell
-> python github-stats.py
-> ```
-
-Check "*.stl" fies in project root
-
-![](images/stl_file.png "Stl file in explorer")
-
-## Compatibility
-
-(Checked binaries, With Python app works correctly on all platforms)
-
-| OS      | x64 | arm64 |
-|---------|:---:|:-----:|
-| MacOS   |  ❔  |   ❔   |
-| Linux   |  ✅  |   ❌   |
-| Windows |  ✅  |   ❔   |
-
-## Developments builds
-
-You can find developments build in GitHub Actions
+**Made with ❤️ by the community | Star ⭐ this repo if you find it useful!**
