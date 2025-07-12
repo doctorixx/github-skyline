@@ -34,6 +34,8 @@ pip install github-skyline
 ```bash
 python -m github_skyline
 ```
+![img.png](images/gui_example.png)
+
 
 **CLI Mode:**
 ```bash
@@ -60,7 +62,7 @@ python -m github_skyline -u your-username -y 2024
    python -m github_skyline -u your-username -y 2024
    ```
 
-### Method 2: Standalone Binaries
+### [DEPRECATED] Method 2: Standalone Binaries
 
 1. **Download:** Go to [Releases](https://github.com/doctorixx/github-skyline/releases) and download the appropriate binary for your system:
 
@@ -82,7 +84,7 @@ python -m github_skyline -u your-username -y 2024
    
    ![Linux Example](images/linux_run_example.png)
 
-### Method 3: From Source
+### [DEPRECATED] Method 3: From Source
 
 1. **Clone the repository:**
    ```bash
@@ -138,49 +140,7 @@ python -m github_skyline -u doctorixx -y 2024
 python -m github_skyline -u doctorixx -y 2024 -o my-contributions.stl
 ```
 
-## 🖥️ Platform Compatibility
-
-| Platform | x64 | ARM64 | Status |
-|----------|:---:|:-----:|:------:|
-| Windows  | ✅  | ❔    | Tested |
-| Linux    | ✅  | ❌    | Tested |
-| macOS    | ❔  | ❔    | Untested |
-
-**Legend:**
-- ✅ Fully supported and tested
-- ❔ Should work but not extensively tested
-- ❌ Not supported
-
-> **Note:** Python package works correctly on all platforms. Compatibility table refers to standalone binaries.
-
-## ⚠️ Important Notes
-
 > **Official CLI Differences:** While GitHub has released an [official CLI tool](https://github.com/github/gh-skyline), it uses a different design. This project maintains compatibility with the original GitHub Skyline website design.
-
-> **Antivirus Warning:** Some antivirus software may flag standalone binaries as suspicious. This is a false positive common with PyInstaller-generated executables. The Python package installation is recommended for security-conscious users.
-
-## 🛠️ Development
-
-### Development Builds
-
-Development builds are available through [GitHub Actions](https://github.com/doctorixx/github-skyline/actions).
-
-### Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-### Building from Source
-
-```bash
-# Install build dependencies
-pip install -r requirements-dev.txt
-
-# Build standalone executable
-pyinstaller --onefile github-stats.py
-```
 
 ## 📝 License
 
