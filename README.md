@@ -84,39 +84,6 @@ python -m github_skyline -u your-username -y 2024
    
    ![Linux Example](images/linux_run_example.png)
 
-### [DEPRECATED] Method 3: From Source
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/doctorixx/github-skyline.git
-   cd github-skyline
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Edit configuration** in `github-stats.py`:
-   ```python
-   from core import process_github_stats
-   
-   if __name__ == '__main__':
-       username = "your-username"  # Replace with your GitHub username
-       year = "2024"              # Replace with desired year
-       filename = f"{username}-{year}.stl"
-       process_github_stats(username, year, filename)
-   ```
-
-4. **Run the script:**
-   ```bash
-   python github-stats.py
-   ```
-
-5. **Find your STL file** in the project root directory:
-   
-   ![STL File](images/stl_file.png)
-
 ## 🔧 CLI Options
 
 ![CLI Options](images/cli_options.png)

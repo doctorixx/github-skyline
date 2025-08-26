@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='github_skyline',
-    version='1.0.1',
+    version='1.0.2',
     packages=find_packages(exclude=['tests*']),
     license='MIT',
     description='Package for generating a 3D contribution map on GitHub',
