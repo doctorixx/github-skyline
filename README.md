@@ -30,7 +30,7 @@ pip install github-skyline
 
 ### Generate Your Skyline
 
-**GUI Mode:**
+**TUI Mode:**
 ```bash
 python -m github_skyline
 ```
@@ -52,7 +52,7 @@ python -m github_skyline -u your-username -y 2024
    pip install github-skyline
    ```
 
-2. **Launch GUI:**
+2. **Launch TUI:**
    ```bash
    python -m github_skyline
    ```
@@ -61,28 +61,6 @@ python -m github_skyline -u your-username -y 2024
    ```bash
    python -m github_skyline -u your-username -y 2024
    ```
-
-### [DEPRECATED] Method 2: Standalone Binaries
-
-1. **Download:** Go to [Releases](https://github.com/doctorixx/github-skyline/releases) and download the appropriate binary for your system:
-
-   ![Release Assets](images/release_assets.png)
-
-2. **Extract** the downloaded archive
-
-3. **Run the application:**
-
-   **Windows:**
-   - Double-click `skyline-wizard.exe`
-   
-   ![Windows Example](images/windows_work_example.png)
-
-   **macOS/Linux:**
-   ```bash
-   ./skyline-wizard.bin
-   ```
-   
-   ![Linux Example](images/linux_run_example.png)
 
 ## 🔧 CLI Options
 
